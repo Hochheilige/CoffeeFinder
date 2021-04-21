@@ -1,9 +1,9 @@
 <?php
 
 namespace models;
-use core\DbModel;
+use core\UserModel;
 
-class User extends DbModel {
+class User extends UserModel {
 
     public const IS_ADMIN = 1;
     public const IS_NOT_ADMIN = 0;
@@ -37,7 +37,7 @@ class User extends DbModel {
         ];
     }
 
-    public function tableName(): string {
+    public static function tableName(): string {
         return 'users';
     }
 
@@ -54,6 +54,28 @@ class User extends DbModel {
             'password'        => 'Password',
             'confirmPassword' => 'Confirm password',
         ];
+    }
+
+    public static function findOne($where) {
+        $tableName = self::tableName();
+        $attributes = array_keys($where);
+        $sql = implode("AND ", array_map(fn($attr) => "$attr =  :$attr", $attributes));
+        $statement = self::prepare("SELECT * FROM $tableName WHERE $sql");
+
+        foreach($where as $key => $value) {
+            $statement->bindValue(":$key", $value);
+        }
+
+        $statement->execute();
+        return $statement->fetchObject(static::class);
+    }
+
+    public static function primaryKey(): string {
+        return 'user_id';
+    }
+
+    public function getDisplayName(): string {
+        return $this->username;
     }
 }
 

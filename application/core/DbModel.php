@@ -1,13 +1,14 @@
 <?php
 
 namespace core;
-use core\Model;
 
 abstract class DbModel extends Model {
 
-    abstract public function tableName() : string;
+    abstract static public function tableName() : string;
 
     abstract public function attributes() : array;
+
+    abstract public static function primaryKey(): string;
 
     public function save(){
         $tableName = $this->tableName();
@@ -23,6 +24,8 @@ abstract class DbModel extends Model {
         $statement->execute();
         return true;
     }
+
+    abstract static public function findOne($where);
 
     public static function prepare($sql) {
         return Application::$app->db->pdo->prepare($sql);
