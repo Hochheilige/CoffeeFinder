@@ -1,6 +1,7 @@
 <h1>Create an Account</h1>
 
 <?php $form = core\form\Form::begin('', "post") ?>
+    <?php echo $form->field($model, 'username') ?>
     <div class="row">
         <div class="col">
             <?php echo $form->field($model, 'firstname') ?>
