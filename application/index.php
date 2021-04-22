@@ -8,6 +8,7 @@ use core\Application;
 use controllers\AuthController;
 use controllers\FindCafeController;
 use controllers\SiteController;
+use controllers\ArticlesController;
 use models\User;
 
 $app = new Application(dirname(__DIR__), ['userClass' => User::class]);
@@ -26,6 +27,9 @@ $app->router->get('/CoffeeFinder/application/profile', [AuthController::class, '
 
 $app->router->get('/CoffeeFinder/application/findCafe', [FindCafeController::class, 'findCafe']);
 $app->router->post('/CoffeeFinder/application/findCafe', [FindCafeController::class, 'findCafe']);
+
+$app->router->get('/CoffeeFinder/application/articles', [ArticlesController::class, 'articles']);
+$app->router->post('/CoffeeFinder/application/articles', [ArticlesController::class, 'articles']);
 
 $app->run();
 

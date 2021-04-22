@@ -16,7 +16,7 @@ class FindCafeController extends Controller {
         }
         if (empty($findCafeData)) {
             return $this->render('findCafe', [
-                'error' => "Data not found"
+                'error' => $findCafeData
             ]);
         } 
         

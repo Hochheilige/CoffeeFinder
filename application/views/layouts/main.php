@@ -34,6 +34,9 @@ use Core\Application;
                             <a class="nav-link" aria-current="page" href="findCafe">Find Coffee</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="articles">Articles</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="contact">Contact</a>
                         </li>
                     </ul>
@@ -51,9 +54,6 @@ use Core\Application;
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="profile">Profile</a>
                         </li> 
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Welcome <?php echo Application::$app->user->getDisplayName() ?></a>
-                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="logout">Logout</a>
                         </li>
