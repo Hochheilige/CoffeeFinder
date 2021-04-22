@@ -14,6 +14,8 @@ use Core\Application;
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
+
+        <title><?php echo $this->title ?></title>
     <head>  
 
     <body>
@@ -46,10 +48,11 @@ use Core\Application;
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="profile">Profile</a>
                         </li> 
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Welcome <?php echo Application::$app->user->getDisplayName() ?></a>
+                        </li> -->
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="logout">Welcome <?php echo Application::$app->user->getDisplayName() ?>
-                                (Logout)
-                            </a>
+                            <a class="nav-link" aria-current="page" href="logout">Logout</a>
                         </li>
                     </ul>  
                     <?php endif; ?>  
