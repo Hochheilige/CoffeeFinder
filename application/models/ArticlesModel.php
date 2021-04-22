@@ -29,7 +29,7 @@ class ArticlesModel extends DbModel {
 
         if($articles) {
             foreach($articles as $values) {
-                array_push($tempArtData, $values['article']);
+                array_push($tempArtData, $values);
             }
         }
 
@@ -45,7 +45,14 @@ class ArticlesModel extends DbModel {
 
     public static function findOne($where = []) {
         $tableName = self::tableName();
-        $statement = self::prepare("SELECT article FROM $tableName");
+        $sql = "
+            SELECT article as article, c.name as category, u.username as user FROM $tableName a
+            JOIN articles_has_category ahc on ahc.articles_id = a.article_id
+            JOIN category c on c.category_id = ahc.category_id
+            JOIN users u on u.user_id = a.user_id
+        ";
+
+        $statement = self::prepare($sql);
         
         $statement->execute();
 

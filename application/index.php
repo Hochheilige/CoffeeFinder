@@ -15,6 +15,8 @@ $app = new Application(dirname(__DIR__), ['userClass' => User::class]);
 
 $app->router->get('/CoffeeFinder/application/', [SiteController::class, 'home']);
 $app->router->get('/CoffeeFinder/application/home', [SiteController::class, 'home']);
+$app->router->post('/CoffeeFinder/application/home', [SiteController::class, 'home']);
+$app->router->post('/CoffeeFinder/application/', [SiteController::class, 'home']);
 $app->router->get('/CoffeeFinder/application/contact', [SiteController::class, 'contact']);
 $app->router->post('/CoffeeFinder/application/contact', [SiteController::class, 'handleContact']);
 

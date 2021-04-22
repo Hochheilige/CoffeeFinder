@@ -22,7 +22,6 @@
 <body class="text-center">
     <div class ="row">
         <div class ="col-12 ">
-
             <div class="form-signin center-block">
                 <form>
                     <img class="mb-4 " src="layouts/logo.png" alt="" width="100" height="100">

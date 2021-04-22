@@ -19,6 +19,17 @@ class ArticlesController extends Controller {
         ]);
     }
 
+    public function article(Request $request, Response $response) {
+        $articles = new ArticlesModel();
+        if ($request->isGet()) {
+            $articles->getArticles(); 
+        }
+
+        return $this->render('articles', [
+            'model' => $articles
+        ]);
+    }
+
 }
 
 

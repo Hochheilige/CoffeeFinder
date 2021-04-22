@@ -24,6 +24,7 @@
                 <th>Nearest Metro Station</th>
                 <th>Distance</th>
                 <th>Time</th>
+                <th>More</th>
             </tr>
         </thead>
         <tbody>
@@ -37,6 +38,7 @@
             <td><?php echo $value['Station']; ?></td>
             <td><?php echo $value['Distance']; ?></td>
             <td><?php echo $value['Time']; ?></td>
+            <td><a class="btn btn-primary" href="cafe" role="button">More</a></td>
         </tr>
         <?php } else : ?>
             <h3><?php echo $error; ?></h3>
