@@ -23,18 +23,30 @@ class ArticlesModel extends DbModel {
         return 'article_id';
     }
 
-    public function getArticles() {
+    public function getArticles($count = 0) {
         $articles = self::findOne();
+        $tempArtData = [];
+
         if($articles) {
             foreach($articles as $values) {
-                array_push($this->articlesData, $values['article']);
+                array_push($tempArtData, $values['article']);
             }
+        }
+
+        if ($count != 0) {
+            $keys = array_rand($tempArtData, $count);
+            foreach ($keys as $key) {
+                array_push($this->articlesData, $tempArtData[$key]);
+            }
+        } else {
+            $this->articlesData = $tempArtData;
         }
     }
 
     public static function findOne($where = []) {
         $tableName = self::tableName();
-        $statement = self::prepare("SELECT article FROM articles");
+        $statement = self::prepare("SELECT article FROM $tableName");
+        
         $statement->execute();
 
         return $statement->fetchAll(\PDO::FETCH_ASSOC);

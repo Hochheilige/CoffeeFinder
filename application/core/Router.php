@@ -3,6 +3,7 @@
 namespace core;
 
 use core\exception\NotFoundException;
+use core\exception\NotImplementedException;
 
 class Router {
     public Request $request;
@@ -26,6 +27,11 @@ class Router {
         $path = $this->request->getPath();
         $method = $this->request->method();
         $callback = $this->routes[$method][$path] ?? false;
+
+        if (stripos($path, 'write')) {
+            throw new NotImplementedException();
+        }
+
         if ($callback === false) {
             throw new NotFoundException();
         }

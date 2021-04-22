@@ -7,6 +7,7 @@ use core\Controller;
 use core\Request;
 use core\Response;
 use core\middlewares\AuthMiddleware;
+use models\ArticlesModel;
 use models\LoginForm;
 use models\User;
 
@@ -21,8 +22,14 @@ class AuthController extends Controller {
         if ($request->isPost()) {
             $loginForm->loadData($request->getBody());
             if($loginForm->validate() && $loginForm->login()){
-                $response->redirect('/CoffeeFinder/application/');
-                return;
+                $articles = new ArticlesModel();
+                $articles->getArticles(2);
+                //$response->redirect('/CoffeeFinder/application/profile');
+                $this->setLayout('main');
+                return $this->render('profile', [
+                    'model' => $loginForm,
+                    'articles' =>  $articles
+                ]);
             }
         }
         $this->setLayout('auth');
@@ -59,7 +66,11 @@ class AuthController extends Controller {
     }
 
     public function profile() {
-        return $this->render('profile') ;
+        $articles = new ArticlesModel();
+        $articles->getArticles(2);
+        return $this->render('profile', [
+            'articles' =>  $articles
+        ]);
     }
 }
 
