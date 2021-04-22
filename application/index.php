@@ -6,6 +6,7 @@ spl_autoload_register(function($class_name) {
 
 use core\Application;
 use controllers\AuthController;
+use controllers\FindCafeController;
 use controllers\SiteController;
 use models\User;
 
@@ -23,7 +24,9 @@ $app->router->post('/CoffeeFinder/application/register', [AuthController::class,
 $app->router->get('/CoffeeFinder/application/logout', [AuthController::class, 'logout']);
 $app->router->get('/CoffeeFinder/application/profile', [AuthController::class, 'profile']);
 
-$app->run();
+$app->router->get('/CoffeeFinder/application/findCafe', [FindCafeController::class, 'findCafe']);
+$app->router->post('/CoffeeFinder/application/findCafe', [FindCafeController::class, 'findCafe']);
 
+$app->run();
 
 ?>

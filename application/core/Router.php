@@ -39,10 +39,12 @@ class Router {
             $controller = $callback[0];
             Application::$app->controller = $controller;
             $controller->action = $callback[1];
+            
             foreach($controller->getMiddlewares() as $middleware) {
                 $middleware->execute();
             }
         }
+        
         return call_user_func($callback, $this->request, $this->response);
     }
 }

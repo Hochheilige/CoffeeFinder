@@ -12,6 +12,8 @@ abstract class DbModel extends Model {
 
     abstract public static function primaryKey(): string;
 
+    abstract static public function findOne($where);
+
     public function save(){
         $tableName = $this->tableName();
         $attributes = $this->attributes();
@@ -26,8 +28,6 @@ abstract class DbModel extends Model {
         $statement->execute();
         return true;
     }
-
-    abstract static public function findOne($where);
 
     public static function prepare($sql) {
         return Application::$app->db->pdo->prepare($sql);

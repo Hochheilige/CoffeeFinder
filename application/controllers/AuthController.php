@@ -44,7 +44,7 @@ class AuthController extends Controller {
             
             return $this->render('register', [
                 'model' => $user
-            ]) ;
+            ]);
 
         }
         $this->setLayout('auth');
