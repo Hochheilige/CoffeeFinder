@@ -14,7 +14,9 @@
 foreach($articles->articlesData as $article) :
 ?>
 
-<p><?php echo $article; endforeach;?> </p>
+<div><?php echo $article['category'];?></div>
+<div><?php echo $article['user'];?></div>
+<p><?php   echo $article['article']; endforeach;?> </p>
 
 <a href="articles">You can find more articles there</a>
 <a href="write">Write your own article</a>

@@ -15,48 +15,52 @@ use Core\Application;
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
+        <link href="/CoffeeFinder/application/vendor/styles/main_style.css?<?rand()?>" rel="stylesheet"/>
         <link rel="stylesheet" href="/CoffeeFinder/application/vendor/styles/login_style.css"/>
+        <link rel="stylesheet" href="/CoffeeFinder/application/vendor/styles/registration_style.css.css?<?rand()?>" />
         <title><?php echo $this->title ?></title>
     <head>  
 
-    <body class="text-center">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <body class="d-flex flex-column h-100">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">CoffeeFinder</a>
+                <a class="navbar-brand" href="#">
+                    <img src="/CoffeeFinder/application/vendor/images/logo.png" alt="" width="100" height="100">
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                  </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="home">Home</a>
+                            <a class="nav-link" aria-current="page" href="home">Главная</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="findCafe">Find Coffee</a>
+                            <a class="nav-link" aria-current="page" href="findCafe">Поиск</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="articles">Articles</a>
+                            <a class="nav-link" aria-current="page" href="articles">Статьи</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact">Contact</a>
+                            <a class="nav-link" href="contact">О нас</a>
                         </li>
                     </ul>
                     <?php if (Application::isGuest()): ?>
                     <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="login">Login</a>
+                            <a class="nav-link" aria-current="page" href="login">Вход</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="register">Register</a>
+                            <a class="nav-link" href="register">Регистрация</a>
                         </li>
                     </ul>
                     <?php else: ?>
                     <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="profile">Profile</a>
+                            <a class="nav-link" aria-current="page" href="profile">Профиль</a>
                         </li> 
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="logout">Logout</a>
+                            <a class="nav-link" aria-current="page" href="logout">Выход</a>
                         </li>
                     </ul>  
                     <?php endif; ?>  
@@ -73,8 +77,10 @@ use Core\Application;
             {{content}}
         </div>
         
-        <div class="container-fluid footer">
-            
+        <div class="footer mt-auto py-3 ">
+            <div class="container">
+              <span class="text-muted">&copy; CoffeeFinder 2021</span>
+            </div>
         </div>
         
             <!-- Optional JavaScript -->

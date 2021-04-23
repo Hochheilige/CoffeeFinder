@@ -1,6 +1,5 @@
 <?php
 
-use Core\Application;
 ?>
 <!DOCTYPE html>
 
@@ -16,14 +15,19 @@ use Core\Application;
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
         <link rel="stylesheet" href="/CoffeeFinder/application/vendor/styles/login_style.css"/>
+        <link rel="stylesheet" href="/CoffeeFinder/application/vendor/styles/registration_style.css.css?<?rand()?>" />
     <head>  
 
     <body class="text-center">
-
-         {{content}}
+      
+                {{content}}
+           
+    
          
-        <div class="container-fluid footer">
-            
+        <div class="footer mt-auto py-3 ">
+            <div class="container">
+              <span class="text-muted">&copy; CoffeeFinder 2021</span>
+            </div>
         </div>
         
             <!-- Optional JavaScript -->

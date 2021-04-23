@@ -29,6 +29,8 @@ $app->router->get('/CoffeeFinder/application/profile', [AuthController::class, '
 
 $app->router->get('/CoffeeFinder/application/findCafe', [FindCafeController::class, 'findCafe']);
 $app->router->post('/CoffeeFinder/application/findCafe', [FindCafeController::class, 'findCafe']);
+$app->router->get('/CoffeeFinder/application/cafe', [FindCafeController::class, 'cafe']);
+$app->router->post('/CoffeeFinder/application/cafe', [FindCafeController::class, 'cafe']);
 
 $app->router->get('/CoffeeFinder/application/articles', [ArticlesController::class, 'articles']);
 $app->router->post('/CoffeeFinder/application/articles', [ArticlesController::class, 'articles']);

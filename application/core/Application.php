@@ -4,6 +4,7 @@ namespace core;
 use Exception;
 use core\db\Database;
 use core\db\DbModel;
+use models\FindCafeModel;
 
 class Application {
 

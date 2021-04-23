@@ -1,6 +1,7 @@
 <?php 
 
 namespace controllers;
+use core\Application;
 use core\Request;
 use core\Response;
 use core\Controller;
@@ -24,6 +25,10 @@ class FindCafeController extends Controller {
             'model' => $findCafeData, 
         ]);
         
+    }
+
+    public function cafe(Request $request, Response $response) {
+        return $this->render('cafe');
     }
 
 }

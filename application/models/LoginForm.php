@@ -19,12 +19,12 @@ use core\Model;
         public function login() {
             $user = User::findOne(['username' => $this->username]);
             if (!$user) {
-                $this->addError('username', 'User with this Username does not exist!');
+                $this->addError('username', 'Пользователя с таким логином не существует!');
                 return false;
             }
 
             if (!password_verify($this->password, $user->password)) {
-                $this->addError('password', 'Password is incorrect!');
+                $this->addError('password', 'Пароль введен неверно!');
                 return false;
             }
 
@@ -33,8 +33,8 @@ use core\Model;
 
         public function labels(): array {
             return [
-                'username' => 'Your username',
-                'password' => 'Password'
+                'username' => 'Логин',
+                'password' => 'Пароль'
             ];
         }
 

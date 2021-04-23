@@ -47,12 +47,12 @@ class User extends UserModel {
 
     public function labels() :array {
         return [
-            'username'        => 'Username',
-            'firstname'       => 'First name',
-            'lastname'        => 'Last name',
-            'email'           => 'Email ',
-            'password'        => 'Password',
-            'confirmPassword' => 'Confirm password',
+            'username'        => 'Логин',
+            'firstname'       => 'Имя',
+            'lastname'        => 'Фамилия',
+            'email'           => 'Email',
+            'password'        => 'Пароль',
+            'confirmPassword' => 'Подтверждение пароля',
         ];
     }
 
