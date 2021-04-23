@@ -1,7 +1,12 @@
-<h1>Home page</h1>
+<?php 
+    use core\Application;
+    $this->title = 'Главная';
+
+?>
+<br>
+<h1>Главная</h1>
 <!-- <h3>
     <?php
-        use core\Application;
         if (Application::isGuest()) {
             echo 'Let\'s Find Coffee';
         } else {
@@ -10,19 +15,53 @@
     ?>
 </h3> -->
 
-<h3>Быстрый поиск</h3>
+<div class = "section cover" id = "cover">
+    <div class="row align-items-start">                
+        <div class="col">
+             <div class="logo_gif" >
+                 <img src="/CoffeeFinder/application/vendor/images/logo_gif.gif" alt="" width="400" height="400">
+             </div>
+             <div class="h2">
+                  Найди кофейню себе по вкусу.                  
+              </div>
+             <div class="h2"> </div>
+             <div class="h2">
+                 В вечной погоне за временем иногда так хочется остановиться и выпить чашечку ароматного кофе.
+             </div>   
+             <div class="h2">
+                 Вместе с нами Вы найдете лучший островок спокойствия в вечной городской суете.
+             </div>  
+         </div>                
+    </div>  
+    
+</div>
+
+<br><br><br>
+<p class ="main_text"></p>
+<h2>Быстрый поиск</h2>
 <?php $form = core\form\Form::begin('', "post") ?>
     <?php echo $form->field($model, 'cafename') ?>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <br>
+    <button class="w-100 btn btn-lg btn-outline-success" type="submit">Найти</button>
+    <br><br>
 <?php core\form\Form::end() ?>
 
-<h3>Статьи</h3>
+<p class ="main_text"></p>
+<h2>Статьи</h2>
 <?php 
     foreach($articles->articlesData as $article) :
 ?>
 
-<div><?php echo $article['category'];?></div>
-<div><?php echo $article['user'];?></div>
-<p><?php echo $article['article']; endforeach;?> </p>
+<figure>
+  <blockquote class="blockquote">
+    <h3><?php echo $article['category'];?></h3>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+   <?php echo $article['user'];?>
+  </figcaption>
+</figure>
+<p class ="main_text"><?php echo $article['article']; endforeach;?> </p>
 
-<a href="articles">You can find more articles there</a>
+<div class="alert" role="alert">
+    <a href="articles" class="alert-link text-light">Вы можете найти новые статьи здесь</a>.
+</div>

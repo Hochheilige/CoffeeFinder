@@ -9,7 +9,12 @@
     }
 </style>
 
-<h1>Find Coffee Page</h1>
+<?php 
+    $this->title = 'Поиск';
+
+?>
+
+<h1>Поиск кофейни</h1>
 
 <?php
 
@@ -29,36 +34,34 @@ $form = core\form\Form::begin('', "post") ?>
     <br><br>
 <?php core\form\Form::end() ?>
 
-<div class="row">
-    <table class="table table-striped tabel-hover table-dark" name="found">
-        <thead>
-            <tr>
-                <th>Название</th>
-                <th>Адрес</th>
-                <th>Ближайшая станция метро</th>
-                <th>Расстояние от метро</th>
-                <th>Время в пути (пешком)</th>
-                <!-- <th>More</th> -->
-            </tr>
-        </thead>
-        <tbody>
-        <?php
-            if (isset($model)): 
-            foreach($model->foundData as $value) {
-        ?>
+<table class="table table-dark table-sm" name="found">
+    <thead>
         <tr>
-            <td><?php echo $value['BrandName']; ?></td>
-            <td><?php echo $value['Adress']; ?></td>
-            <td><?php echo $value['Station']; ?></td>
-            <td><?php echo $value['Distance']; ?></td>
-            <td><?php echo $value['Time']; ?></td>
-            <!-- <td><a class="btn btn-primary" href="cafe" role="button">More</a></td> -->
+            <th scope="col">Название</th>
+            <th scope="col">Адрес</th>
+            <th scope="col">Ближайшая станция метро</th>
+            <th scope="col">Расстояние от метро</th>
+            <th scope="col">Время в пути (пешком)</th>
+            <!-- <th>More</th> -->
         </tr>
-        <?php } else : ?>
-            <h3><?php echo $error; ?></h3>
-        <?php endif; ?>
-        </tbody>
-    </table>
+    </thead>
+    <tbody>
+    <?php
+        if (isset($model)): 
+        foreach($model->foundData as $value) {
+    ?>
+    <tr>
+        <th scope="row" class="text-break"><?php echo $value['BrandName']; ?></td>
+        <td class="text-break"><?php echo $value['Adress']; ?></td>
+        <td class="text-break"><?php echo $value['Station']; ?></td>
+        <td class="text-break"><?php echo $value['Distance']; ?></td>
+        <td class="text-break"><?php echo $value['Time']; ?></td>
+        <!-- <td><a class="btn btn-primary" href="cafe" role="button">More</a></td> -->
+    </tr>
+    <?php } else : ?>
+        <h3><?php echo $error; ?></h3>
+    <?php endif; ?>
+    </tbody>
+</table>
 
 
-</div>

@@ -50,7 +50,9 @@
           border-top-right-radius: 0;
         }       
     </style>
-
+<?php 
+    $this->title = 'Регистрация';
+?>
 <div class ="row">
     <div class ="col-12 ">
         <div class="form-registration center-block">

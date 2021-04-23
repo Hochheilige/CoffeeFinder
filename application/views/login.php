@@ -1,7 +1,6 @@
-<?php
-    /** @var $model User */
+<?php 
+    $this->title = 'Вход';
 ?>
-
 <div class ="row">
     <div class ="col-12 ">
         <div class="form-signin center-block">

@@ -29,10 +29,10 @@ class FindCafeModel extends DbModel {
 
     public function labels(): array {
         return [
-            'cafename' => 'Cafe Name',
-            'district' => 'District',
-            'metro'    => 'Metro Station',
-            'product'  => 'Product'
+            'cafename' => 'Название кофейни',
+            'district' => 'Район',
+            'metro'    => 'Станция метро',
+            'product'  => 'Продукт'
         ];
     }
 

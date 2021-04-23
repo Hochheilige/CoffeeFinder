@@ -41,9 +41,6 @@ use Core\Application;
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="articles">Статьи</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact">О нас</a>
-                        </li>
                     </ul>
                     <?php if (Application::isGuest()): ?>
                     <ul class="navbar-nav ml-auto mb-2 mb-lg-0">

@@ -22,5 +22,21 @@ body
     background-color: none;
 }
 
+.main_text
+{
+    border-bottom: 2px solid;
+    border-color:rgba(169, 169, 169, 0.712);
+    margin-bottom: 20px;
+} 
+
+.alert-link
+{
+    text-decoration: none;
+}
+
+.alert
+{
+    background-color:#ffffff2a;
+}   
 
 

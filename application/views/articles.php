@@ -1,10 +1,20 @@
-<h1>Articles</h1>
+<?php 
+    $this->title = 'Статьи';
+?>
+
+<h1>Статьи</h1>
 
 <?php 
 foreach($model->articlesData as $article) :
 ?>
 
-<div><?php echo $article['category'];?></div>
-<div><?php echo $article['user'];?></div>
-<p><?php echo $article['article']; endforeach;?> </p>
+<figure>
+  <blockquote class="blockquote">
+    <h3><?php echo $article['category'];?></h3>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+   <?php echo $article['user'];?>
+  </figcaption>
+</figure>
+<p class ="main_text"><?php echo $article['article']; endforeach;?> </p>
 
